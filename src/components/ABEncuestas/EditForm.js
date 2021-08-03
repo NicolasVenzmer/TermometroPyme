@@ -48,18 +48,10 @@ function EditForm(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
-  const [user, setUser] = React.useState({})
-  const [formDeatils, setFormDetails] = React.useState({});
+  const [user] = React.useState({})
+  const [formDeatils] = React.useState({});
   const [openOfAlert, setOpenOfAlert] = React.useState(false);
 
-  const clipToClipboard = ()=>{
-    navigator.clipboard.writeText(window.location.origin + "/s/" + formDeatils._id)
-    handleClickOfAlert();
-    handleClose();
-  }
-  const handleClickOfAlert = () => {
-    setOpenOfAlert(true);
-  };
   const handleCloseOfAlert = (event, reason) => {
     if (reason === 'clickaway') {
       return;

@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) =>
 function Forms(props) {
 
     const classes = useStyles();
-    const [forms, setForms] = React.useState([])
-    const [loadingForms, setLoadingForms] = React.useState(true);
+    const [forms] = React.useState([])
+    const [loadingForms] = React.useState(true);
 
     return (
         <div>

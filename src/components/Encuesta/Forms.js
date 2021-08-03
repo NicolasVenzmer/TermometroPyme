@@ -15,7 +15,7 @@ import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 //importo 
-import { guardarEncuestaResp, getEncuestaID } from "../../controller/miApp.controller";
+import { getEncuestaID } from "../../controller/miApp.controller";
 
 const useStylesGrid = makeStyles((theme) => ({
     root: {
@@ -73,7 +73,6 @@ export default function Forms(props) {
         const encuestas = await getEncuestaID(id)
         setEncuestas(encuestas[0])
     };
-    const idbusqueda = props.match.params.id
 
     const isEmpty = (stringToValidate) => {
         if (stringToValidate !== undefined && stringToValidate !== null) {
@@ -84,14 +83,12 @@ export default function Forms(props) {
     };
 
     const subirRespuesta = async function () {
-        let Respuesta = false;
         const valorPregunta1 = encuestas.pregunta1 ? !isEmpty(pregunta1) : true
         const valorPregunta2 = encuestas.pregunta2 ? !isEmpty(pregunta2) : true
         const valorPregunta3 = encuestas.pregunta3 ? !isEmpty(pregunta3) : true
         const valorPregunta4 = encuestas.pregunta4 ? !isEmpty(pregunta4) : true
         const valorPregunta5 = encuestas.pregunta5 ? !isEmpty(pregunta5) : true
         if (valorPregunta1 && valorPregunta2 && valorPregunta3 && valorPregunta4 && valorPregunta5) {
-            Respuesta = await guardarEncuestaResp(encuestas, pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, idbusqueda);
             return true
         }
         else {

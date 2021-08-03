@@ -27,9 +27,6 @@ export default function Encuesta(props) {
 
   const [encuestas, setEncuestas] = useState([]);
   const clase5 = useStylesGrid();
-  var url = window.location.href;
-  var tituloID = url.substring(url.lastIndexOf('/') + 1);
-  var titulo = tituloID.replace(/%20/g, " ");
 
   useEffect(() => {
     getEncuesta(props.match.params.id)

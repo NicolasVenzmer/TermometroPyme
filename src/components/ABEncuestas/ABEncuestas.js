@@ -12,7 +12,6 @@ import PollIcon from '@material-ui/icons/Poll';
 
 //importo 
 import { getEncuesta } from "../../controller/miApp.controller";
-import { deleteEncuesta } from "../../controller/miApp.controller";
 
 const useStylesButton = makeStyles((theme) => ({
   button: {
@@ -39,8 +38,6 @@ export default function AbmEncuestas() {
   };
 
   const borrarEncuesta = async function (newEncuesta) {
-    let Encuesta = false;
-    Encuesta = await deleteEncuesta(newEncuesta._id, newEncuesta.titulo, newEncuesta.sector, newEncuesta.tamaño, newEncuesta.date);
     window.location.reload(true);
   }
 

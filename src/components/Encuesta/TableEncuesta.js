@@ -47,6 +47,7 @@ const EditableTable = ({ onRowAdd, onRowUpdate, selectedRow, deleteText, data, c
                                     },
                                 },
                             }}
+                            // eslint-disable-next-line react/jsx-no-duplicate-props
                             options={{
                                 searchable: false,
                                 filtering: true,
